@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 export class BookmarkService{
 
     errorHandler = error => console.error('BookmarkService error', error);
-    private baseUrl = 'https://udemy-angular2-36dea.firebaseio.com/';
+    private baseUrl = 'https://udemy-angular2-c86d4.firebaseio.com/';
 
     constructor(private http: Http){
 
