@@ -25,3 +25,15 @@
 
 <p appColor="red">This is red</p>
 <p appColorRainbow>Move mouse over the text in order to change the color</p>
+
+<br />
+<p>custom if directive</p>
+<button (click)="selected = !selected">Toggle</button>
+<!--
+  every directive angular or custom are compilet to this example
+ -->
+<ng-template [appMyIf]="selected" let-name="name">
+  <div>custom if directive {{name}}!</div>
+</ng-template>
+<!-- the sort way to write directives -->
+<div *appMyIf="selected; let n = name;">custom if directive 2 {{n}}!</div>

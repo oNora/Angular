@@ -9,6 +9,7 @@ import { TodoService } from './todo.service';
 })
 export class AppComponent {
 
+    selected: boolean;
     constructor(public todoService: TodoService) { }
 
     // we can create a getter so we don't have to keep and maintain extra state on the component for the todos
