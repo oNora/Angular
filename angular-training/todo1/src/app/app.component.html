@@ -1,4 +1,5 @@
-main page
+<h2>todo list</h2>
+<hr />
 
 <div>
   <input #titleInput type="text" [value]="selectedTodoTitle">
@@ -18,3 +19,9 @@ main page
 <app-todo *ngFor="let todo of todoList; let i = index;" [title]="todo.title" [completed]="todo.completed" (toggle)="handleToggle(i)"
   (edit)="editHandler(todo)">
 </app-todo>
+
+<h2> directives</h2>
+<hr />
+
+<p appColor="red">This is red</p>
+<p appColorRainbow>Move mouse over the text in order to change the color</p>
