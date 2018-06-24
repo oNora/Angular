@@ -1,0 +1,5 @@
+<div [class.completed]="completed">
+  <input type="checkbox" [checked]="completed" (click)="toggleCompleted()" />
+  <span> {{title}} </span>
+  <button (click)="editCompleted()">Edit</button>
+</div>
