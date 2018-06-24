@@ -1,14 +1,14 @@
 main page
 
 <div>
-  <input #titleInput type="text" [value]="selectedTodo?.title">
+  <input #titleInput type="text" [value]="selectedTodoTitle">
 
   <!--  using *ngIf -->
   <!-- <button *ngIf="selectedTodo" (click)='saveTodo(titleInput.value)'>Save</button>  -->
   <!-- <button *ngIf="selectedTodo == null" (click)='saveTodo(titleInput.value)'>Add</button> -->
 
   <!-- using ng-template -->
-  <button *ngIf="selectedTodo; else addingBtn" (click)="saveTodo(titleInput.value)">save</button>
+  <button *ngIf="selectedTodoTitle; else addingBtn" (click)="saveTodo(titleInput.value)">save</button>
   <ng-template #addingBtn>
     <button (click)="saveTodo(titleInput.value)">Add</button>
   </ng-template>

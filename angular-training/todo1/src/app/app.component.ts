@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ITodo } from './interfaces/todo';
+import { TodoService } from './todo.service';
 
 @Component({
     selector: 'app-root',
@@ -8,44 +9,26 @@ import { ITodo } from './interfaces/todo';
 })
 export class AppComponent {
 
-    selectedTodo: ITodo;
-    todoList: ITodo[] = [
-        {
-            title: 'Say Hello 1',
-            completed: true
-        },
-        {
-            title: 'Say Hello 2',
-            completed: true
-        },
-        {
-            title: 'Say Hello 3',
-            completed: false
-        },
-        {
-            title: 'Say Hello 4',
-            completed: true
-        },
-    ];
+    constructor(public todoService: TodoService) { }
 
-
+    // we can create a getter so we don't have to keep and maintain extra state on the component for the todos
+    get todoList() {
+        return this.todoService.todoList;
+    }
     handleToggle(index: number) {
-        this.todoList[index].completed = !this.todoList[index].completed;
+        this.todoService.toggle(index);
     }
 
     editHandler(todo: ITodo) {
-        this.selectedTodo = todo;
+        this.todoService.selectedTodo = todo;
+    }
+
+    get selectedTodoTitle() {
+        const selectedTodo = this.todoService.selectedTodo;
+        return selectedTodo ? selectedTodo.title : null;
     }
 
     saveTodo(title: string) {
-
-        if (this.selectedTodo) {
-            this.selectedTodo.title = title;
-            // clean selected todo variable after updating
-            this.selectedTodo = null;
-            return;
-        }
-
-        this.todoList.push({ title: title, completed: false });
+        this.todoService.save(title);
     }
 }
