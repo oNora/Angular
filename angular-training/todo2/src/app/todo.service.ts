@@ -42,16 +42,16 @@ export class TodoService implements OnDestroy {
     // ];
     constructor(private http: HttpClient) {
         this.todoSubscription = this.getData().subscribe(
-            data => {
-                console.log('getData', data);
-                this.todoList = data;
-                // debugger;
-            },
-            error => {
-                console.log('erro');
-            },
-            () => {
-                this.loaded = true;
+            {
+                next: result => {
+                    console.log(result);
+                },
+                error: error => {
+                    console.log(`error: ${error}`);
+                },
+                complete: () => {
+                    this.loaded = true;
+                }
             }
         );
     }
