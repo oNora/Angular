@@ -110,6 +110,7 @@ export class TodoService implements OnDestroy {
             return;
         }
 
+        // make it work with 2 different data arrays
         if (typeElement === 'custom') {
             this.customLsit.push({ title: title, completed: false });
         } else {
