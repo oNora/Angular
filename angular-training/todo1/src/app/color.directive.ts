@@ -5,7 +5,7 @@ import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 })
 export class ColorDirective {
 
-
+  // using a setter makes it easy to know when the binding for the directive changes and to do something upon that change.
   @Input() set appColor(color: string) {
     this.renderer.setStyle(this.el.nativeElement, 'color', color);
   }
