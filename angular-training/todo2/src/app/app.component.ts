@@ -17,6 +17,9 @@ export class AppComponent {
     get todoList() {
         return this.todoService.todoList;
     }
+    get customLsit() {
+        return this.todoService.customLsit;
+    }
     get isloaded() {
         return this.todoService.loaded;
     }
@@ -33,8 +36,9 @@ export class AppComponent {
         return selectedTodo ? selectedTodo.title : null;
     }
 
-    saveTodo(title: string) {
-        this.todoService.save(title);
+    saveTodo(title: string, typeElement: string) {
+        console.log('custom:', typeElement);
+        this.todoService.save(title, typeElement);
     }
 
 }

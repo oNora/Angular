@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoService } from './todo.service';
+import { MyForDirective } from './my-for.directive';
 
 @NgModule({
     declarations: [
         AppComponent,
-        TodoComponent
+        TodoComponent,
+        MyForDirective
     ],
     imports: [
         BrowserModule,

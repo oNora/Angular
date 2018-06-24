@@ -40,6 +40,26 @@ export class TodoService implements OnDestroy {
     //         completed: true
     //     },
     // ];
+
+
+    customLsit = [
+        {
+            title: 'Say Hello',
+            completed: true
+        },
+        {
+            title: 'Say Something Else',
+            completed: false
+        },
+        {
+            title: 'Say Hello 2',
+            completed: true
+        },
+        {
+            title: 'Say Something Else 2',
+            completed: false
+        }
+    ];
     constructor(private http: HttpClient) {
         this.todoSubscription = this.getData().subscribe(
             {
@@ -81,7 +101,7 @@ export class TodoService implements OnDestroy {
         this.selectedTodo = todo;
     }
 
-    save(title: string) {
+    save(title: string, typeElement: string) {
 
         if (this.selectedTodo) {
             this.selectedTodo.title = title;
@@ -90,7 +110,11 @@ export class TodoService implements OnDestroy {
             return;
         }
 
-        this.todoList.push({ title: title, completed: false });
+        if (typeElement === 'custom') {
+            this.customLsit.push({ title: title, completed: false });
+        } else {
+            this.todoList.push({ title: title, completed: false });
+        }
     }
 
     ngOnDestroy() {
