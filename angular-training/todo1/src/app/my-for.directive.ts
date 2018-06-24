@@ -18,6 +18,10 @@ export class MyForDirective {
         // if the views are already rendered skip adding them again
         if (this.views) { return; }
         this.views = items.map((item, index) => {
+            // $impliciet - this hepl to use in template this:
+            // myFor="let item of todoList"
+            // instead this:
+            // myFor="todoList; let item = item;"
             return this.vc.createEmbeddedView(this.templateRef, { $implicit: item, index });
         });
     }
