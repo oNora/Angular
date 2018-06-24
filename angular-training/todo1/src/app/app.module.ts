@@ -7,6 +7,7 @@ import { TodoService } from './todo.service';
 import { ColorDirective } from './color.directive';
 import { ColorRainbowDirective } from './color-rainbow.directive';
 import { MyIfDirective } from './my-if.directive';
+import { MyForDirective } from './my-for.directive';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { MyIfDirective } from './my-if.directive';
         TodoComponent,
         ColorDirective,
         ColorRainbowDirective,
-        MyIfDirective
+        MyIfDirective,
+        MyForDirective
     ],
     imports: [
         BrowserModule

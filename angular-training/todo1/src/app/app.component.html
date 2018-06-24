@@ -37,3 +37,8 @@
 </ng-template>
 <!-- the sort way to write directives -->
 <div *appMyIf="selected; let n = name;">custom if directive 2 {{n}}!</div>
+
+<br />
+<p>custom for directive</p>
+
+<div *appMyFor="todoList; let item; let i = index;">{{i}} - {{item.title}}</div>
