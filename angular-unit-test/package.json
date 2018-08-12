@@ -8,6 +8,7 @@
     "build": "ng build --prod",
     "start": "ng serve --open",
     "test": "ng test --sourcemaps=false",
+    "coverage": "ng test --code-coverage",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e"
   },
