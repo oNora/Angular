@@ -1,0 +1,44 @@
+<h2>todo list</h2>
+<hr />
+
+<div>
+  <input #titleInput type="text" [value]="selectedTodoTitle">
+
+  <!--  using *ngIf -->
+  <!-- <button *ngIf="selectedTodo" (click)='saveTodo(titleInput.value)'>Save</button>  -->
+  <!-- <button *ngIf="selectedTodo == null" (click)='saveTodo(titleInput.value)'>Add</button> -->
+
+  <!-- using ng-template -->
+  <button *ngIf="selectedTodoTitle; else addingBtn" (click)="saveTodo(titleInput.value)">save</button>
+  <ng-template #addingBtn>
+    <button (click)="saveTodo(titleInput.value)">Add</button>
+  </ng-template>
+
+</div>
+
+<app-todo *ngFor="let todo of todoList; let i = index;" [title]="todo.title" [completed]="todo.completed" (toggle)="handleToggle(i)"
+  (edit)="editHandler(todo)">
+</app-todo>
+
+<h2> directives</h2>
+<hr />
+
+<p appColor="red">This is red</p>
+<p appColorRainbow>Move mouse over the text in order to change the color</p>
+
+<br />
+<p>custom if directive</p>
+<button (click)="selected = !selected">Toggle</button>
+<!--
+  every directive angular or custom are compilet to this example
+ -->
+<ng-template [appMyIf]="selected" let-name="name">
+  <div>custom if directive {{name}}!</div>
+</ng-template>
+<!-- the sort way to write directives -->
+<div *appMyIf="selected; let n = name;">custom if directive 2 {{n}}!</div>
+
+<br />
+<p>custom for directive</p>
+
+<div *appMyFor="todoList; let item; let i = index;">{{i}} - {{item.title}}</div>

@@ -1,0 +1,44 @@
+main page
+
+<div class="container">
+  <div class="column-left">
+    <div>
+      <input #titleInput type="text" [value]="selectedTodoTitle">
+
+      <!--  using *ngIf -->
+      <!-- <button *ngIf="selectedTodo" (click)='saveTodo(titleInput.value)'>Save</button>  -->
+      <!-- <button *ngIf="selectedTodo == null" (click)='saveTodo(titleInput.value)'>Add</button> -->
+
+      <!-- using ng-template -->
+      <button *ngIf="selectedTodoTitle; else addingBtn" (click)="saveTodo(titleInput.value)">save</button>
+      <ng-template #addingBtn>
+        <button (click)="saveTodo(titleInput.value)">Add</button>
+      </ng-template>
+
+    </div>
+
+
+    <div *ngIf="isloaded == false">Loading ... </div>
+
+    <app-todo *ngFor="let todo of todoList; let i = index;" [title]="todo.title" [completed]="todo.completed" (toggle)="handleToggle(i)"
+      (edit)="editHandler(todo)">
+    </app-todo>
+  </div>
+
+  <div class="column-right">
+
+    <p>custom for directive</p>
+
+    <div>
+      <input #customTitleInput type="text" [value]="selectedTodoTitle">
+
+      <button *ngIf="selectedTodoTitle; else addingBtn" (click)="saveTodo(customTitleInput.value)">save</button>
+      <ng-template #addingBtn>
+        <button (click)="saveTodo(customTitleInput.value, 'custom')">Add</button>
+      </ng-template>
+
+    </div>
+
+    <div *appMyFor="customLsit; let item; let i = index;">{{i}} - {{item.title}}</div>
+  </div>
+</div>
