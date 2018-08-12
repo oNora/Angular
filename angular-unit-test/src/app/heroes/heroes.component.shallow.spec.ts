@@ -1,11 +1,11 @@
-import { TestBed, ComponentFixture } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
-import { NO_ERRORS_SCHEMA, Component, Input } from "@angular/core";
-import { of } from "rxjs/observable/of";
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { NO_ERRORS_SCHEMA, Component, Input } from '@angular/core';
+import { of } from 'rxjs/observable/of';
 
-import { HeroesComponent } from "./heroes.component";
-import { HeroService } from "../hero.service";
-import { Hero } from "../hero";
+import { HeroesComponent } from './heroes.component';
+import { HeroService } from '../hero.service';
+import { Hero } from '../hero';
 
 describe('HeroesComponent (shallow test)', () => {
     // get intellisense for the component

@@ -41,5 +41,5 @@ describe('HeroComponent (shallow test)', () => {
         //fixture.nativeElement get access to the DOM
         expect(fixture.nativeElement.querySelector('a').textContent).toContain('SuperDude');
 
-    })
+    });
 })

@@ -1,5 +1,5 @@
-import { HeroesComponent } from "./heroes.component";
-import { of } from "rxjs/observable/of";
+import { HeroesComponent } from './heroes.component';
+import { of } from 'rxjs/observable/of';
 
 
 //example without TestBed
