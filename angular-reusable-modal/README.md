@@ -1,10 +1,7 @@
-# APM-Demo3
+# angular-reusable-modal
 
-Demo of using effects for retrieving and displaying data.
-NOTE: The create, update, and delete operations no longer work in this version of the demo since we moved only the retrieve to NgRx.
-The create, update, and delete are implemented with NgRx in Demo4.
+This is sample demo of how can you create a reusable component for showing pop up dialog to the user.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.2.
 
 ## Development server
 
