@@ -1,0 +1,15 @@
+﻿<div class="card">
+  welcom
+
+
+  <button (click)='openModal("modal1")'>Open Moda</button>
+  <rm-modal-dialog (triggerCloseModal)='onClose($event)' [customClass]="'modal1'">
+    ala bala
+  </rm-modal-dialog>
+
+  <button (click)='openModal("modal2")'>Open Moda</button>
+  <rm-modal-dialog (triggerCloseModal)='onClose($event)' [customClass]="'modal2'">
+    ala bala
+  </rm-modal-dialog>
+
+</div>

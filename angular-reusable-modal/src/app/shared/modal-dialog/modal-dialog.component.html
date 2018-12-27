@@ -1,0 +1,10 @@
+<div class="modal" [ngClass]="customClass">
+  <div class="modal-content">
+    <h1> title</h1>
+    {{customClass}}
+    <button (click)='closeModal(customClass)' class="close-modal-btn">x</button>
+    <ng-content></ng-content>
+  </div>
+
+  <div class="modal-backdrop"></div>
+</div>
