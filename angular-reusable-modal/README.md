@@ -1,6 +1,7 @@
 # angular-reusable-modal
 
 This is sample demo of how can you create a reusable component for showing pop up dialog to the user.
+Demo link [here](http://onora.github.io/Angular_projects/angular-reusable-modal/dist/rm/)
 
 
 ## Development server
