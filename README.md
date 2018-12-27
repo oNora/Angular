@@ -4,9 +4,9 @@ Description
 This is a collection of small projects, that I created just for fun while I learn Angular.
 
 
-### I. `angular-training`
+### I. `angular-reusable-modal`
 This is sample demo of how can you create a reusable component for showing pop up dialog to the user.
-Demo link [here](http://onora.github.io/Angular_projects/angular-reusable-modal/dist/rm/)
+Demo link [here](http://onora.github.io/Angular_projects/angular-reusable-modal/dist/)
 
 ### II. `angular-training`
 
