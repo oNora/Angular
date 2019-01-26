@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build",
+    "build": "ng build --prod --base-href https://onora.github.io/Angular_projects/angular-reusable-modal/dist/rm/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
