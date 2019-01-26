@@ -1,0 +1,11 @@
+.gitHubBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #f8f9fa;
+    z-index: 999;
+}
+
+.gitHubBtn:hover{
+    color: #e2e2e2;
+}
